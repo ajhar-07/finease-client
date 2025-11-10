@@ -12,6 +12,7 @@ const MyTransaction = () => {
  const {user}=use(AuthContext)
  const[mytransaction,setMytransaction]=useState([]) 
  const myref=useRef(null)
+   const [sortorder, setSortorder] = useState('none');
   // const transaction=useLoaderData()
 //added
 const [type, setType] = useState("Income");
@@ -99,7 +100,15 @@ const handleView = (id) => {
 
 
 
-
+const sortItm = (() => {
+    if (sortorder === 'price-ase') {
+      return [...mytransaction].sort((a, b) => a.amount - b.amount);
+    } else if (sortorder === 'price-desc') {
+      return [...mytransaction].sort((a, b) => b.amount - a.amount);
+    } else {
+      return mytransaction;
+    }
+  })();
 
 
   return (
@@ -107,11 +116,21 @@ const handleView = (id) => {
       <h2 className="text-2xl font-semibold mb-6 text-center">
         My Transactions-({mytransaction.length})
       </h2>
-    
+
+      <select
+          value={sortorder}
+          onChange={(e) => setSortorder(e.target.value)}
+          className="border rounded-md px-2 py-1"
+        >
+          <option value="none">Sort By Amount</option>
+          <option value="price-ase">Low → High</option>
+          <option value="price-desc">High → Low</option>
+        </select>
+
     {/* <p>{details?.data?.email}</p> */}
    
       <div className="space-y-4">
-        {mytransaction.map((t) => (
+        {sortItm.map((t) => (
           <div
             key={t._id}
             className="flex flex-row-reverse items-center justify-between  rounded-lg shadow-md bg-blue-100 p-4 hover:shadow-md transition"

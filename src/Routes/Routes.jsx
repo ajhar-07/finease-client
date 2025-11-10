@@ -43,6 +43,7 @@ import ViewDetails from "../Pages/ViewDetails";
 import Overview from "../Pages/Home/Overview";
 import Report from "../Pages/Report";
 import PrivaterRoute from "../Privateroute/PrivaterRoute";
+import NotFound from "../Components/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -68,7 +69,8 @@ export const router = createBrowserRouter([
         element:<PrivaterRoute> <ViewDetails /></PrivaterRoute>,
 
       },
-      {path:'/report', element:<PrivaterRoute><Report/></PrivaterRoute>}
+      {path:'/report', element:<PrivaterRoute><Report/></PrivaterRoute>},
+      {path:'*', element:<NotFound/>}
      
     ],
   },

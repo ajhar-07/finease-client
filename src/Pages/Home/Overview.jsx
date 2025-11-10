@@ -132,7 +132,9 @@ axios.get(`http://localhost:3000/add-transaction?email=${user?.email}`)
   const totalBalance = totalIncome - totalExpense;
 
   return (
-    <div className="w-11/12 mx-auto mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+   <div>
+    {
+      user &&  <div className="w-11/12 mx-auto mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
       {/* Total Balance */}
       <div className="bg-white shadow-md rounded-2xl p-6 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition duration-300">
         <FaWallet className="text-4xl text-blue-500 mb-2" />
@@ -160,6 +162,8 @@ axios.get(`http://localhost:3000/add-transaction?email=${user?.email}`)
         </p>
       </div>
     </div>
+    }
+   </div>
   );
 };
 
