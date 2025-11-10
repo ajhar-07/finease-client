@@ -1,57 +1,65 @@
-import React from "react";
-import { useLoaderData, Link } from "react-router";
+
+import { useLocation, Link } from "react-router";
 import { FaArrowLeft, FaDollarSign, FaCalendarAlt, FaUser, FaTag, FaAlignLeft } from "react-icons/fa";
 
 const ViewDetails = () => {
-  const transaction = useLoaderData();
+  const location = useLocation();
+  const transaction = location.state;
+
+  if (!transaction) {
+    return (
+      <div className="text-center mt-20 text-gray-600">
+        <p className="text-3xl">No transaction data found.</p>
+        <Link to="/my-transaction" className="text-blue-600 underline">
+          Back to My Transactions
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-3xl my-10 mx-auto bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-xl mt-12">
-      {/* Header */}
       <h2 className="text-3xl font-bold text-center text-indigo-700 mb-8 tracking-wide">
         Transaction Details
       </h2>
 
-      {/* Details Card */}
       <div className="bg-white rounded-xl shadow-md p-6 space-y-5 transition-all duration-300 hover:shadow-xl">
-        <div className="flex justify-between items-center border-b border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaTag className="text-blue-500" /> Type
           </span>
           <span className="text-gray-800 font-medium capitalize">{transaction.type}</span>
         </div>
 
-        <div className="flex justify-between items-center border-b border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaAlignLeft className="text-pink-500" /> Category
           </span>
           <span className="text-gray-800 font-medium">{transaction.category}</span>
         </div>
 
-        <div className="flex justify-between items-center border-b border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaDollarSign className="text-green-500" /> Amount
           </span>
-          <span className="text-gray-800 font-bold text-lg">
-            ${parseFloat(transaction.amount).toFixed(2)}
-          </span>
+          <span className="text-gray-800 font-bold text-lg">${transaction.amount}</span>
         </div>
 
-        <div className="flex justify-between items-center border-b border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaCalendarAlt className="text-orange-400" /> Date
           </span>
           <span className="text-gray-800 font-medium">{transaction.date}</span>
         </div>
 
-        <div className="flex justify-between items-center border-b border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaUser className="text-purple-500" /> Name
           </span>
           <span className="text-gray-800 font-medium">{transaction.name}</span>
         </div>
 
-        <div className="flex justify-between items-center border-b  border-purple-600 pb-3">
+        <div className="flex justify-between border-b border-purple-600 pb-3">
           <span className="text-gray-600 font-semibold flex items-center gap-2">
             <FaUser className="text-cyan-600" /> Email
           </span>
@@ -68,7 +76,6 @@ const ViewDetails = () => {
         </div>
       </div>
 
-      {/* Back Button */}
       <div className="text-center mt-8">
         <Link
           to="/my-transaction"
