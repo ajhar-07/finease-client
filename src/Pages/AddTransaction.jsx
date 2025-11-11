@@ -50,10 +50,10 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
         Add Transaction
       </h2>
 
-      {/* ✅ use onSubmit instead of onClick */}
+      
       <form onSubmit={handleAddtransaction} className="space-y-4">
 
-        {/* Type - Radio buttons */}
+        {/* type er dropdown */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Type
@@ -84,7 +84,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           </div>
         </div>
 
-        {/* Category - Dynamic Dropdown */}
+        {/* Categories  */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Category
@@ -105,7 +105,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           </select>
         </div>
 
-        {/* Amount */}
+        
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Amount
@@ -119,7 +119,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           />
         </div>
 
-        {/* Description */}
+       
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Description
@@ -132,7 +132,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           />
         </div>
 
-        {/* Date */}
+        
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Date
@@ -145,7 +145,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           />
         </div>
 
-        {/* User Info */}
+        
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             User Email
@@ -172,7 +172,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
           />
         </div>
 
-        {/* Submit */}
+       
         <div className="text-center pt-3">
           <button
             type="submit"

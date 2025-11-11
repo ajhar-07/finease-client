@@ -24,9 +24,9 @@ const handleLogout=()=>{
 
   return (
     <div className="bg-base-100 shadow-sm">
-      {/* Inner container centered with w-11/12 */}
+     
       <div className="navbar w-11/12 mx-auto">
-        {/* Navbar Start */}
+     
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,14 +44,14 @@ const handleLogout=()=>{
           <a className="font-bold text-xl">Fin<span className="text-primary">Ease</span></a>
         </div>
 
-        {/* Navbar Center */}
+       
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {links}
           </ul>
         </div>
 
-        {/* Navbar End */}
+       
         <div className="navbar-end">
           <div className="flex items-center gap-4">
            {
@@ -61,7 +61,7 @@ const handleLogout=()=>{
               className="w-12 rounded-full"
             />:""
            }
-            {/* <a className="btn btn-primary">Login</a> */}
+           
           {
             user?<button onClick={handleLogout} className='btn btn-primary'>Logout</button>: 
             <div className='flex gap-3'> 

@@ -13,8 +13,8 @@ const MyTransaction = () => {
  const[mytransaction,setMytransaction]=useState([]) 
  const myref=useRef(null)
    const [sortorder, setSortorder] = useState('none');
-  // const transaction=useLoaderData()
-//added
+  
+
 const [type, setType] = useState("Income");
   const [category, setCategory] = useState("Salary");
 
@@ -71,24 +71,13 @@ const [selectedTransaction, setSelectedTransaction] = useState(null);
 
 
   }
-//   const handleView = (id) => {
-//   axios.get(`http://localhost:3000/transactions/${id}`)
-//     // .then(res => {
-//     //   setDetails(res.data); 
-//     //   console.log(res.data);
-//     // })
-//     // .catch(error => {
-//     //   console.log(error.message);
-//     // });
-// };
+
 
 
 
 const navigate = useNavigate();
 
-// const handleView = (id) => {
-//   navigate(`/transactions/${id}`);
-// };
+
   const handleView = (transaction) => {
   navigate(`/transactions/${transaction._id}`, { state: transaction });
 };
@@ -129,7 +118,7 @@ const sortItm = (() => {
           <option value="price-desc">High → Low</option>
         </select>
 
-    {/* <p>{details?.data?.email}</p> */}
+    
    
       <div className="space-y-4">
         {sortItm.map((t) => (
@@ -186,7 +175,7 @@ const sortItm = (() => {
 <dialog ref={myref} className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
     
-  {/* update form */}
+ 
  <form onSubmit={handleupdateTansaction} className="space-y-4">
 
       
