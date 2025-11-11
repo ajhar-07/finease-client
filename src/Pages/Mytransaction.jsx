@@ -111,7 +111,7 @@ const sortItm = (() => {
       <select
           value={sortorder}
           onChange={(e) => setSortorder(e.target.value)}
-          className="border rounded-md px-2 py-1 outline-0 my-4"
+          className="border text-blue-400 rounded-md px-2 py-1 outline-0 my-4"
         >
           <option value="none">Sort By Amount</option>
           <option value="price-ase">Low → High</option>
@@ -211,7 +211,7 @@ const sortItm = (() => {
 
       
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             Category
           </label>
           <select
@@ -221,9 +221,9 @@ const sortItm = (() => {
             onChange={(e) => setCategory(e.target.value)}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
-            <option value="">Select Category</option>
+            <option value="" className="text-blue-400">Select Category</option>
             {(type === "Income" ? incomeCategories : expenseCategories).map((ctg, i) => (
-              <option key={i} value={ctg}>
+              <option key={i} value={ctg} className="text-black">
                 {ctg}
               </option>
             ))}
@@ -232,7 +232,7 @@ const sortItm = (() => {
 
       
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             Amount
           </label>
           <input
@@ -245,7 +245,7 @@ const sortItm = (() => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             Description
           </label>
           <input
@@ -259,7 +259,7 @@ const sortItm = (() => {
 
         
         <div>
-          <label defaultValue={selectedTransaction?.date || ""} className="block text-sm font-medium text-gray-700 mb-1">
+          <label defaultValue={selectedTransaction?.date || ""} className="block text-sm font-medium text-blue-400 mb-1">
             Date
           </label>
           <input
@@ -270,7 +270,7 @@ const sortItm = (() => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             User Email
           </label>
           <input
@@ -283,7 +283,7 @@ const sortItm = (() => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             User Name
           </label>
           <input

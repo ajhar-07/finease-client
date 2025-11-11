@@ -57,7 +57,7 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#D93654", "#A78BFA"
 
     
     return (
-      <div className="max-w-5xl mx-auto mt-10 p-6">
+      <div className="text-black max-w-5xl mx-auto mt-10 p-6">
       <h2 className="text-3xl font-bold text-center mb-8 text-primary">Financial Report</h2>
 
       <div className="grid md:grid-cols-2 gap-10">

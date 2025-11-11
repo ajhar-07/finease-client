@@ -45,7 +45,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
   };
 
   return (
-    <div className="max-w-md mx-auto my-10 bg-white shadow-md rounded-xl p-6">
+    <div className=" text-black max-w-md mx-auto my-10 bg-white shadow-md rounded-xl p-6">
       <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
         Add Transaction
       </h2>
