@@ -24,24 +24,25 @@ const Profile = () => {
     setIsEditing(true);
   };
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async(e) => {
     e.preventDefault();
 
     
-    updateUser({ displayName: newName, photoURL: newPhoto })
-      .then(() => {
-        setUser({
-          ...user,
-          displayName: newName,
-          photoURL: newPhoto,
-        });
-       toast.success("Profile Updated")
-        setIsEditing(false);
-      })
-      .catch((error) => {
-        // console.error(error);
-        toast.error("Failed to update profile: " + error.message);
-      });
+   
+     try{
+      await updateUser({ displayName: newName, photoURL: newPhoto })
+     await user.reload()
+
+     const updateuser={...user,displayName: newName, photoURL: newPhoto}
+     setUser(updateuser)
+      toast.success("Profile Updated Successfully!");
+    setIsEditing(false);
+     }
+     catch(error){
+       toast.error("Failed to update profile: " + error.message);
+      ;
+     }
+       
   };
 
   return (
