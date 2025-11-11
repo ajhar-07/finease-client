@@ -40,7 +40,7 @@ const Profile = () => {
       })
       .catch((error) => {
         // console.error(error);
-        alert("Failed to update profile: " + error.message);
+        toast.error("Failed to update profile: " + error.message);
       });
   };
 
@@ -48,11 +48,11 @@ const Profile = () => {
     <div data-aos="fade-left">
       {user ? (
         <div className="flex justify-center items-center min-h-scree py-10 px-4">
-          <div className="bg-blue-200 text-black shadow-lg rounded-2xl p-6 w-full max-w-sm text-center">
+          <div className="bg-blue-200 text-black shadow-lg rounded-2xl p-6 w-full max-w-sm text-center ">
             <img
               src={user?.photoURL || user?.user.email}
               alt={user?.displayName || "No name"}
-              className="w-24 h-24 rounded-full mx-auto border-4 border-blue-500"
+              className="w-full h-full mx-auto border-4 border-blue-500"
             />
             <h2 className="text-xl font-semibold mt-4">
               {user?.displayName || "No name"}
