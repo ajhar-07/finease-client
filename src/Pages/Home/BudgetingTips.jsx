@@ -21,7 +21,7 @@ const BudgetingTips = () => {
   ];
 
   return (
-    <section className="bg-base-100 py-16 px-6">
+    <section className=" py-16 px-6">
       <div className="w-11/12 mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           💡 Smart <span className="text-primary">Budgeting Tips</span>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 
 import { use } from "react";
@@ -11,6 +11,10 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
     const {user,UserRegister,LoginwithGoogle}=use(AuthContext)
     const [showpass,setShowPass]=useState(false)
+     const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
     const handleregister=(e)=>{
         e.preventDefault()
         // const displayName=user.displayName
@@ -43,7 +47,7 @@ const Register = () => {
         displayName: name,
         photoURL: photourl || null,
       });
-
+            navigate(from, { replace: true });
             toast.success("Login Successfull")
         })
         .catch(error=>{
@@ -57,6 +61,7 @@ const Register = () => {
     LoginwithGoogle()
     .then(()=>{
         toast.success("Login Successfull")
+         navigate(from, { replace: true });
     })
     .catch(error=>{
         console.log(error);
@@ -66,7 +71,7 @@ const Register = () => {
  }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-base-200">
+    <div className="flex justify-center items-center min-h-screen ">
       <div className="bg-white shadow-md rounded-lg p-8 w-96">
         <h2 className="text-2xl font-bold text-center text-primary mb-6">
           Create Account
@@ -77,21 +82,21 @@ const Register = () => {
             type="text"
             name="name"
             placeholder="Full Name"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white text-black outline-1"
             required
           />
           <input
             type="email"
             name="email"
             placeholder="Email"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white text-black outline-1"
             required
           />
           <input
             type="text"
             name="photourl"
             placeholder="Photo URL"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white text-black outline-1"
           />
           <div className="relative">
               <input
@@ -99,7 +104,7 @@ const Register = () => {
                 name="password"
                 placeholder="Enter your password"
                 required
-                className="input input-bordered w-full pr-12"
+                className="input input-bordered w-full pr-12 bg-white text-black outline-1"
               />
               <button
                 type="button"
@@ -117,7 +122,7 @@ const Register = () => {
 
         <div className="divider text-black">OR</div>
 
-        <button onClick={handleLoginwithGoogle} className="btn w-full flex items-center justify-center gap-2 border">
+        <button onClick={handleLoginwithGoogle} className="bg-white text-black outline-1 btn w-full flex items-center justify-center gap-2 border">
           <FcGoogle className="text-xl" /> Continue with Google
         </button>
 

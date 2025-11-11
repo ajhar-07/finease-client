@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Link } from 'react-router';
 
 const Report = () => {
     const {user}=use(AuthContext)
@@ -25,7 +26,18 @@ const Report = () => {
 
 
     if(!transactions.length){
-        return <p>Loading...</p>
+        return <div className="flex flex-col items-center justify-center min-h-[200px] rounded-xl shadow-md p-6 space-y-4">
+  <p className="text-gray-600 text-lg font-medium">
+    No Data Added For Reporting.
+  </p>
+  <Link
+    to={'/add-transaction'}
+    className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition"
+  >
+    Add Transaction
+  </Link>
+</div>
+
     }
 
     const categorydata=transactions.filter((tr)=>tr.type==="Expense")

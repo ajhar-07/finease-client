@@ -126,9 +126,9 @@ const sortItm = (() => {
         {sortItm.map((t) => (
           <div
             key={t._id}
-            className="flex flex-row-reverse items-center justify-between  rounded-lg shadow-md bg-blue-100 p-4 hover:shadow-md transition"
+            className="flex flex-col md:flex-row md:items-center justify-between rounded-lg shadow-md bg-blue-100 p-4 hover:shadow-lg transition"
           >
-            <div className="flex  gap-2">
+            <div className="flex flex-wrap justify-end gap-2 mb-3 md:mb-0">
               <button
                 onClick={()=>handlemodal(t)}
                 className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded flex items-center gap-1"
@@ -150,8 +150,8 @@ const sortItm = (() => {
                 <FaEye /> View
               </button>
             </div>
-            <div className="flex-1 ml-6 grid grid-cols-3 gap-x-6 gap-y-2 text-gray-700">
-              <p>
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-5 text-gray-700">
+              <p className="">
                 <span className="font-semibold">Type:</span> {t.type}
               </p>
               <p>

@@ -91,7 +91,7 @@ const Profile = () => {
                     type="text"
                     value={newName}
                     onChange={(e) => setNewName(e.target.value)}
-                    className="input input-bordered w-full mt-1"
+                    className="input bg-white outline-1 input-bordered w-full mt-1"
                     placeholder="Enter your new name"
                     required
                   />
@@ -104,7 +104,7 @@ const Profile = () => {
                     type="text"
                     value={newPhoto}
                     onChange={(e) => setNewPhoto(e.target.value)}
-                    className="input input-bordered w-full mt-1"
+                    className="input input-bordered w-full mt-1 bg-white outline-1"
                     placeholder="Enter new photo URL"
                     required
                   />

@@ -56,7 +56,7 @@ const handleLoginwithGoogle=()=>{
             type="email"
             name="email"
             placeholder="Email"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white text-black outline-1"
             required
           />
            <div className="relative">
@@ -65,7 +65,7 @@ const handleLoginwithGoogle=()=>{
                          name="password"
                          placeholder="Enter your password"
                          required
-                         className="input input-bordered w-full pr-12"
+                         className="input input-bordered w-full pr-12 bg-white text-black outline-1"
                        />
                        <button
                          type="button"
@@ -83,7 +83,7 @@ const handleLoginwithGoogle=()=>{
 
         <div className="divider  text-black ">OR</div>
 
-        <button onClick={handleLoginwithGoogle} className="btn w-full flex items-center justify-center gap-2 border">
+        <button onClick={handleLoginwithGoogle} className="btn w-full flex items-center justify-center gap-2 border bg-white outline-1 text-black">
           <FcGoogle className="text-xl" /> Continue with Google
         </button>
 
