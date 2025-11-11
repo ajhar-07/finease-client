@@ -45,10 +45,10 @@ const [selectedTransaction, setSelectedTransaction] = useState(null);
     };
  axios.patch(`http://localhost:3000/transactions/${selectedTransaction._id}`, newTransaction)
 .then(data=>{console.log(data.data);
-  toast.success("New Transaction Added")
    setMytransaction(old =>
         old.map(t => t._id === selectedTransaction._id ? { ...t, ...newTransaction } : t).sort((a, b) => a.amount - b.amount)
       );
+      toast.success("New Transaction Added")
       myref.current.close();
 })
 .catch(error=>{
@@ -65,6 +65,7 @@ const [selectedTransaction, setSelectedTransaction] = useState(null);
     if (data.data.deletedCount) {
         const remainingTransaction = mytransaction.filter((t) => t._id !== id); 
         setMytransaction(remainingTransaction);
+         toast.success("Transaction Deleted Successfully")
       }
     })
    
@@ -180,7 +181,7 @@ const sortItm = (() => {
 
       
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-blue-400 mb-1">
             Type
           </label>
           <div className="flex items-center gap-6">

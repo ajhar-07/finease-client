@@ -81,13 +81,13 @@ const handleLoginwithGoogle=()=>{
           </button>
         </form>
 
-        <div className="divider">OR</div>
+        <div className="divider  text-black ">OR</div>
 
         <button onClick={handleLoginwithGoogle} className="btn w-full flex items-center justify-center gap-2 border">
           <FcGoogle className="text-xl" /> Continue with Google
         </button>
 
-        <p className="text-center mt-4 text-sm">
+        <p className="text-black text-center mt-4 text-sm">
           New to Fin<span className="text-primary font-semibold">Ease</span>?{" "}
           <Link to="/register" className="text-primary font-semibold">
             Register

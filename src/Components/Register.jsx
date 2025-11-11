@@ -115,13 +115,13 @@ const Register = () => {
           </button>
         </form>
 
-        <div className="divider">OR</div>
+        <div className="divider text-black">OR</div>
 
         <button onClick={handleLoginwithGoogle} className="btn w-full flex items-center justify-center gap-2 border">
           <FcGoogle className="text-xl" /> Continue with Google
         </button>
 
-        <p className="text-center mt-4 text-sm">
+        <p className="text-center mt-4 text-sm text-black">
           Already have an account?{" "}
           <Link to="/login" className="text-primary font-semibold">
             Login
