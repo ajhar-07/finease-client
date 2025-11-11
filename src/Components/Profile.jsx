@@ -28,20 +28,21 @@ const Profile = () => {
     e.preventDefault();
 
     
-   
-     try{
-      await updateUser({ displayName: newName, photoURL: newPhoto })
-     await user.reload()
+  try{
+     setUser((usr)=>({
+    ...usr, displayName: newName,
+        photoURL: newPhoto,
+   }))
+    
 
-     const updateuser={...user,displayName: newName, photoURL: newPhoto}
-     setUser(updateuser)
-      toast.success("Profile Updated Successfully!");
-    setIsEditing(false);
-     }
-     catch(error){
-       toast.error("Failed to update profile: " + error.message);
-      ;
-     }
+    toast.success("Profile Updated Successfully!");
+      setIsEditing(false);
+
+  }
+
+     catch (error) {
+      toast.error("Failed to update profile: " + error.message);
+      console.error(error);}
        
   };
 
