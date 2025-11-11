@@ -71,6 +71,7 @@ const handleLogout=()=>{
        
         <div className="navbar-end">
           <div className="flex items-center gap-4">
+          <Link to={'/profile'}>
            {
             user ?  <img
               src={user?.photoURL}
@@ -78,6 +79,7 @@ const handleLogout=()=>{
               className="w-12 rounded-full"
             />:""
            }
+          </Link>
            
           {
             user?<button onClick={handleLogout} className='btn btn-primary'>Logout</button>: 

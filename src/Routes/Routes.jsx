@@ -44,6 +44,7 @@ import Overview from "../Pages/Home/Overview";
 import Report from "../Pages/Report";
 import PrivaterRoute from "../Privateroute/PrivaterRoute";
 import NotFound from "../Components/NotFound";
+import Profile from "../Components/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -70,7 +71,8 @@ export const router = createBrowserRouter([
 
       },
       {path:'/report', element:<PrivaterRoute><Report/></PrivaterRoute>},
-      {path:'*', element:<NotFound/>}
+      {path:'*', element:<NotFound/>},
+      {path:'/profile', element:<Profile/>}
      
     ],
   },
