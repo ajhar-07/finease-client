@@ -23,7 +23,7 @@ const FinancialPlanning = () => {
   return (
     <section className="bg-gradient-to-r from-blue-50 to-indigo-100 py-16 px-6 rounded-3xl">
       <div className="w-11/12 mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-black text-3xl md:text-4xl font-bold mb-6">
           💰 Why <span className="text-primary">Financial Planning</span> Matters
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto mb-12">
@@ -36,7 +36,7 @@ const FinancialPlanning = () => {
           {reasons.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition-all"
+              className="text-black p-6 bg-white rounded-2xl shadow hover:shadow-lg transition-all"
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>

@@ -141,7 +141,7 @@ axios.post('http://localhost:3000/add-transaction',newTransaction)
             type="date"
             name="date"
             required
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full text-black border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 

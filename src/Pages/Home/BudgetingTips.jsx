@@ -35,7 +35,7 @@ const BudgetingTips = () => {
           {tips.map((tip, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl shadow hover:shadow-lg bg-white transition-all"
+              className="text-black p-6 rounded-2xl shadow hover:shadow-lg bg-white transition-all"
             >
               <div className="flex justify-center mb-4">{tip.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{tip.title}</h3>

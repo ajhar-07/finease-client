@@ -3,9 +3,26 @@ import { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { CiDark, CiLight } from "react-icons/ci";
 const Navbar = () => {
     const {user, Logout}=use(AuthContext)
+    const[mode,setMode]=useState("light")
+
+  useEffect(()=>{
+ document.documentElement.setAttribute("data-theme",mode)
+
+  },[mode])
+
+const change=()=>{
+  if(mode==="light"){
+    setMode("dark")
+  }
+  else{
+    setMode("light")
+  }
+}
   const links = (
     <>
       <li><NavLink to="/">Home</NavLink></li>
@@ -77,6 +94,9 @@ const handleLogout=()=>{
            
             
           }
+          <button className="text-blue-700 font-bold text-2xl" onClick={change}>
+  {mode === "light" ? <CiDark /> : <CiLight />}
+</button>
           </div>
         </div>
       </div>
