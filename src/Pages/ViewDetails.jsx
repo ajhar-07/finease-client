@@ -1,10 +1,11 @@
 
 import { useLocation, Link } from "react-router";
 import { FaArrowLeft, FaDollarSign, FaCalendarAlt, FaUser, FaTag, FaAlignLeft } from "react-icons/fa";
+import { number } from "framer-motion";
 
 const ViewDetails = () => {
   const location = useLocation();
-  const transaction = location.state;
+  const {transaction,allTransaction}= location.state || {}
 
   if (!transaction) {
     return (
@@ -16,6 +17,9 @@ const ViewDetails = () => {
       </div>
     );
   }
+
+ const categorytotal=allTransaction?allTransaction.filter((tn) =>tn.category === transaction.category)
+  .reduce((acc,tn)=>acc+Number(tn.amount),0):transaction.amount;
 
   return (
     <div className="max-w-3xl my-10 mx-auto bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-xl mt-12">
@@ -43,6 +47,12 @@ const ViewDetails = () => {
             <FaDollarSign className="text-green-500" /> Amount
           </span>
           <span className="text-gray-800 font-bold text-lg">${transaction.amount}</span>
+        </div>
+        <div className="flex justify-between border-b border-purple-600 pb-3">
+          <span className="text-gray-600 font-semibold flex items-center gap-2">
+            <FaDollarSign className="text-green-500" /> Category Total
+          </span>
+          <span className="text-gray-800 font-bold text-lg">${categorytotal.toFixed(2)}</span>
         </div>
 
         <div className="flex justify-between border-b border-purple-600 pb-3">

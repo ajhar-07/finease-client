@@ -80,7 +80,8 @@ const navigate = useNavigate();
 
 
   const handleView = (transaction) => {
-  navigate(`/transactions/${transaction._id}`, { state: transaction });
+  navigate(`/transactions/${transaction._id}`, {
+  state: { transaction, allTransaction: mytransaction }});
 };
   useEffect(()=>{
  axios.get(`http://localhost:3000/add-transaction?email=${user?.email}`)
