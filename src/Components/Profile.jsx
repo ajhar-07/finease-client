@@ -54,7 +54,7 @@ const Profile = () => {
             <img
               src={user?.photoURL || user?.user.email}
               alt={user?.displayName || "No name"}
-              className="w-full h-full mx-auto border-4 border-blue-500"
+              className="w-full bg-cover h-[280px] object-cover  mx-auto border-4 border-blue-500"
             />
             <h2 className="text-xl font-semibold mt-4">
               {user?.displayName || "No name"}

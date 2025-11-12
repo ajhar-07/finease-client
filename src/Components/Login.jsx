@@ -76,7 +76,7 @@ const handleLoginwithGoogle=()=>{
                        </button>
                      </div>
 
-          <button type="submit" className="btn btn-primary w-full">
+          <button type="submit" className="px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-lg shadow-lg transform hover:scale-102 transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full">
             Login
           </button>
         </form>

@@ -1,16 +1,59 @@
-# React + Vite
+# FinEase - Personal Finance Management Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [Your Live Site URL Here](#)  
 
-Currently, two official plugins are available:
+FinEase is a personal finance management web application where users can efficiently manage their **income, expenses, and savings goals**. The platform allows users to record transactions, set monthly budgets, and view financial summaries with insightful charts and reports. This project demonstrates full-stack web development concepts, including **CRUD operations, authentication, backend integration, and data visualization**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Authentication System**
+  - Secure login and registration using email/password.
+  - Google login integration for quick access.
+  - Password validation with uppercase, lowercase, and minimum 6 characters.
+  - Error and success messages shown via **hot-toast**.
 
-## Expanding the ESLint configuration
+- **Transaction Management (CRUD)**
+  - Users can **add, update, view, and delete** income and expense transactions.
+  - Categories for transactions (income vs expense) for better organization.
+  - Real-time updates on the dashboard.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Budgeting and Financial Insights**
+  - Set monthly budgets and track spending.
+  - View **category-wise totals**, income vs expense summaries.
+  - Visual charts and reports for easy understanding of finances.
+
+- **Modern Frontend**
+  - Developed using **React** with **React Router** for routing.
+  - Interactive UI with **Tailwind CSS** for responsive and clean design.
+  - Smooth animations using **Framer Motion** for better user experience.
+
+- **Backend and Database**
+  - Backend powered by **Express.js**.
+  - Data stored in **MongoDB**.
+  - Handles **CORS** for secure communication between frontend and backend.
+  - API requests handled using **Axios**.
+
+- **Additional Features**
+  - Responsive design for mobile, tablet, and desktop devices.
+  - Toast notifications for user feedback (success, error, info).
+  - User profile management including **photoURL and displayName** updates.
+
+---
+
+## Technologies Used
+
+- **Frontend:** React, React Router, Tailwind CSS, Framer Motion, Hot Toast  
+- **Backend:** Node.js, Express.js, MongoDB, CORS  
+- **Authentication:** Firebase Authentication (Email/Password, Google Login)  
+- **HTTP Requests:** Axios  
+
+---
+
+## How to Use
+
+1. Clone the repository.
+2. Install dependencies in both **client** and **server** folders using:
+   ```bash
+   npm install

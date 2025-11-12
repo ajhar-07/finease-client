@@ -76,19 +76,19 @@ const handleLogout=()=>{
             user ?  <img
               src={user?.photoURL}
               alt="User"
-              className="w-12 rounded-full"
+              className="w-12 h-12 rounded-full"
             />:""
            }
           </Link>
            
           {
-            user?<button onClick={handleLogout} className='btn btn-primary'>Logout</button>: 
+            user?<button onClick={handleLogout} className='px-2 py-1.5 border-2 border-blue-700 text-blue-700 font-semibold rounded-lg hover:bg-blue-700 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2'>Logout</button>: 
             <div className='flex gap-3'> 
-              <Link className="btn btn-primary"  to={'/login'}>
+              <Link className="px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"  to={'/login'}>
             Login 
             </Link>
 
-            <Link className="btn btn-primary"  to={'/register'}>
+            <Link className="px-3 py-2 border-2 border-blue-700 text-blue-700 font-semibold rounded-lg hover:bg-blue-700 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"  to={'/register'}>
             SignUp
             </Link>
             
