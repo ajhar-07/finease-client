@@ -13,7 +13,7 @@ const Overview = () => {
   const {user}=use(AuthContext)
 const [transactions,setTransactions]=useState([])
 useEffect(()=>{
-axios.get(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/add-transaction?email=${user?.email}`)
+axios.get(`https://fin-ease-api-server.vercel.app/add-transaction?email=${user?.email}`)
 .then(data=>{console.log(data.data)
   setTransactions(data.data)
 }

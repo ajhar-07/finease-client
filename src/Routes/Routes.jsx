@@ -21,19 +21,19 @@ export const router = createBrowserRouter([
       { path: '/', 
         
           // loader: () =>
-          // fetch("https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/add-transaction"),
+          // fetch("https://fin-ease-api-server.vercel.app/add-transaction"),
         element: <Home /> },
       { path: '/register', element: <Register /> },
       { path: '/login', element: <Login /> },
       { path: '/add-transaction', element:<PrivaterRoute><AddTransaction/></PrivaterRoute> },
       { path: '/my-transaction', 
         //  loader: ({ params }) =>
-        //   fetch(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/transactions/${params.id}`),
+        //   fetch(`https://fin-ease-api-server.vercel.app/transactions/${params.id}`),
         element:<PrivaterRoute> <Mytransaction /></PrivaterRoute> },
       {
         path: '/transactions/:id',
         loader: ({ params }) =>
-          fetch(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/transactions/${params.id}`),
+          fetch(`https://fin-ease-api-server.vercel.app/transactions/${params.id}`),
         element:<PrivaterRoute> <ViewDetails /></PrivaterRoute>,
 
       },
