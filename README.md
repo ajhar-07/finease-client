@@ -1,6 +1,6 @@
 # FinEase - Personal Finance Management Web Application
 
-**Live Site:** [Your Live Site URL Here](#)  
+**Live Site:** [https://finease-35aa3.web.app/](#)  
 
 FinEase is a personal finance management web application where users can efficiently manage their **income, expenses, and savings goals**. The platform allows users to record transactions, set monthly budgets, and view financial summaries with insightful charts and reports. This project demonstrates full-stack web development concepts, including **CRUD operations, authentication, backend integration, and data visualization**.
 
