@@ -26,7 +26,7 @@ const AddTransaction = () => {
       name: form.name.value,
     };
 
-axios.post('http://localhost:3000/add-transaction',newTransaction)
+axios.post('https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/add-transaction',newTransaction)
 .then(data=>{console.log(data.data);
   toast.success("New Transaction Added")
 })

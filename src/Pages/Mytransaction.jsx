@@ -43,7 +43,7 @@ const [selectedTransaction, setSelectedTransaction] = useState(null);
       email: form.email.value,
       name: form.name.value,
     };
- axios.patch(`http://localhost:3000/transactions/${selectedTransaction._id}`, newTransaction)
+ axios.patch(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/transactions/${selectedTransaction._id}`, newTransaction)
 .then(data=>{console.log(data.data);
    setMytransaction(old =>
         old.map(t => t._id === selectedTransaction._id ? { ...t, ...newTransaction } : t).sort((a, b) => a.amount - b.amount)
@@ -59,7 +59,7 @@ const [selectedTransaction, setSelectedTransaction] = useState(null);
 
   }
   const handleDelete = (id) =>{
-   axios.delete(`http://localhost:3000/transactions/${id}`)
+   axios.delete(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/transactions/${id}`)
    .then(data=>{
     console.log(data.data);
     if (data.data.deletedCount) {
@@ -84,7 +84,7 @@ const navigate = useNavigate();
   state: { transaction, allTransaction: mytransaction }});
 };
   useEffect(()=>{
- axios.get(`http://localhost:3000/add-transaction?email=${user?.email}`)
+ axios.get(`https://fin-ease-api-server-9lq391k9f-fahim-ajhars-projects.vercel.app/add-transaction?email=${user?.email}`)
  .then(data=>{console.log(data.data);
     setMytransaction(data.data)
  })
